@@ -1,14 +1,20 @@
 // Elements
 const envelope = document.getElementById("envelope-container");
 const letter = document.getElementById("letter-container");
+const message = document.getElementById("message-container");
+const finalMessage = document.getElementById("final-message-container");
 const noBtn = document.querySelector(".no-btn");
 const yesBtn = document.querySelector(".btn[alt='Yes']");
 
 const title = document.getElementById("letter-title");
 const title2 = document.getElementById("letter-title-2");
+const messageTitle = document.getElementById("message-title");
 const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
+const messageContinueBtn = document.getElementById("message-continue-button");
+const messageContinueBtnFromLetter = document.getElementById("message-button");
+const snoopyFragola = document.getElementById("snoopy-fragola");
 
 // Click Envelope
 
@@ -71,4 +77,19 @@ yesBtn.addEventListener("click", () => {
     buttons.style.display = "none";
 
     finalText.style.display = "block";
+    
+    messageContinueBtnFromLetter.style.display = "block";
+});
+
+// CONTINUE button from letter (go to message)
+messageContinueBtnFromLetter.addEventListener("click", () => {
+    letter.style.display = "none";
+    message.style.display = "flex";
+    messageContinueBtn.style.display = "block";
+});
+
+// CONTINUE button from message (go to final message)
+messageContinueBtn.addEventListener("click", () => {
+    message.style.display = "none";
+    finalMessage.style.display = "flex";
 });
